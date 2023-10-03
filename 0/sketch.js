@@ -1,12 +1,25 @@
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+    createCanvas(windowWidth, windowHeight);
+    background('beige');
 }
 
 function draw() {
-  background(255);
-  fill(0);
-  rect(width / 2.5, height / 4, width / 20, height / 2);
-  rect(width - width / 2.5 - width / 20, height / 4, width / 20, height / 2);
-  rect(width / 2.5 + width / 20, height / 4 - width / 20, width - 2 * width / 2.5 - 2 * width / 20, width / 20);
-  rect(width / 2.5 + width / 20, height / 4 + height / 2, width - 2 * width / 2.5 - 2 * width / 20, width / 20);
+    background('beige');
+
+    // Draw rect by seconds
+    drawrectByTime (2 * width / 3, 0, second(), 59, 'gold');
+    
+    // Draw rect by minutes
+    drawrectByTime (width / 3, 0, minute(), 59, 'pink');
+
+    // Draw rect by hours
+    drawrectByTime (0, 0, hour(), 23, 'lightblue');
+}
+
+function drawrectByTime (x, y, Period, maxTime,rectColor){
+    let timeNow = Period;
+    let rectHeight = map(timeNow, 0, maxTime, 1, height);
+    fill(rectColor);
+    noStroke();
+    rect(x, y, width / 3, rectHeight);
 }
