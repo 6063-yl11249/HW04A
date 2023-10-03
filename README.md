@@ -11,4 +11,5 @@ I forgot to put background('beige') in function draw(), to clear the canvas each
 
 Fun Part:  
 
-It's easy to create function drawrectByTime, to make the code more clearly.
+It's easy to create function drawrectByTime, to make the code more clearly. The previous version:
+![Process](./HW04Aprevious.png) 
